@@ -244,6 +244,14 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+#start acpid service to fix known error with T490 laptop
+systemctl start acpid.service
+
+#start picom with specific launch options to enable blur
 exec picom --experimental-backends --backend glx
+
+#start spotify service
 exec spotifyd
+
+#recover last wallpaper
 exec ~/.fehbg &
